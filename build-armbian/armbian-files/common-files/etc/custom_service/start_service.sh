@@ -94,5 +94,7 @@ openvfd_boxid="15"
         echo "[$(date +"%Y.%m.%d.%H:%M:%S")] The pveproxy service started successfully." >>${custom_log}
 }
 
+/usr/bin/fanoes.sh > /var/log/fanoes.log 2>&1 &
+
 # Add custom log
 echo "[$(date +"%Y.%m.%d.%H:%M:%S")] All custom services executed successfully!" >>${custom_log}
