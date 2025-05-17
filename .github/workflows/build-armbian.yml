@@ -12,7 +12,7 @@ on:
       set_release:
         description: "Select OS Release."
         required: false
-        default: "jammy"
+        default: "bookworm"
         type: choice
         options:
           - jammy
@@ -22,7 +22,7 @@ on:
       armbian_board:
         description: "Select device board."
         required: false
-        default: "all"
+        default: "s922x-ct2000"
         type: choice
         options:
           - all
@@ -177,12 +177,12 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "6.1.y_6.12.y"
+        default: "5.15.180"
         type: choice
         options:
           - 5.4.y
           - 5.10.y
-          - 5.15.158
+          - 5.15.180
           - 6.1.y
           - 6.6.y
           - 6.12.26
@@ -194,13 +194,12 @@ on:
       auto_kernel:
         description: "Auto use the latest kernel."
         required: false
-        default: true
+        default: false
         type: boolean
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "ophub/kernel"
-        type: choice
+        default: "breakingbadboy/OpenWrt"
         options:
           - ophub/kernel
       kernel_usage:
@@ -232,7 +231,7 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "Andy"
         type: choice
         options:
           - ophub
