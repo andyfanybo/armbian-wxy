@@ -94,5 +94,10 @@ openvfd_boxid="15"
         echo "[$(date +"%Y.%m.%d.%H:%M:%S")] The pveproxy service started successfully." >>${custom_log}
 }
 
+[[ -x "/usr/bin/fan.sh" ]] && {
+    /usr/bin/fan.sh >/dev/null 2>&1 &
+    echo "[$(date +"%Y.%m.%d.%H:%M:%S")] The temperature-based fan control service (fanoes) started successfully." >>${custom_log}
+}
+
 # Add custom log
 echo "[$(date +"%Y.%m.%d.%H:%M:%S")] All custom services executed successfully!" >>${custom_log}
